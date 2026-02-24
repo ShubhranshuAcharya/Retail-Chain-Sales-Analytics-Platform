@@ -206,14 +206,6 @@ Tools Used:
 
 ---
 
-## 👨‍💻 Team Members
-
-- Shubhranshu Acharya – Data Warehouse & Advanced SQL
-- Aditya Prakash Acharya – ETL & Spark Processing
-- Jyotirmaye Acharya – Snowflake Optimization & Dashboard
-
----
-
 ## 📄 License
 
 This project is developed for academic and portfolio demonstration purposes.
