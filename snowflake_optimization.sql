@@ -1,6 +1,6 @@
 -- Module: Snowflake Performance Optimization & Advanced Features
 -- Project: Retail Chain Sales Analytics Platform
--- Author: Shubhranshu Acharya
+
 
 
 USE ROLE ACCOUNTADMIN;
@@ -51,4 +51,5 @@ SELECT
     CUSTOMER_INFO:city::STRING AS CITY,
     CUSTOMER_INFO:membership::STRING AS MEMBERSHIP,
     CUSTOMER_INFO:spend::NUMBER AS SPEND
+
 FROM CUSTOMER_JSON;
