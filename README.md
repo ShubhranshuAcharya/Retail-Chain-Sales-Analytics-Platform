@@ -1,217 +1,293 @@
-# 🏬 Retail Chain Sales Analytics Platform
+# 🏬 Retail Chain Sales Analytics Platform  
 
-An end-to-end Retail Data Engineering and Analytics Platform built using Python, Apache Spark, Snowflake, Advanced SQL, and Power BI.
+An End-to-End Retail Data Engineering & Analytics Solution built using **Python, Apache Spark, Snowflake, Advanced SQL, and Power BI**.
 
-This project demonstrates the design and implementation of a scalable data warehouse architecture, ETL/ELT pipelines, distributed data processing, performance optimization, and interactive business dashboards.
-
----
-
-## 📌 Project Overview
-
-The Retail Chain Sales Analytics Platform centralizes retail sales data and transforms it into actionable business insights through:
-
-- Data Warehouse Design (Star Schema)
-- Advanced SQL Analytics
-- Python-based ETL/ELT Pipelines
-- Apache Spark (Batch & Streaming)
-- Snowflake Optimization
-- Security & Governance (RBAC, Masking)
-- Performance Tuning
-- Interactive BI Dashboards
+This project demonstrates the complete lifecycle of building a scalable data platform — from raw CSV ingestion to enterprise-grade analytics dashboards with security, optimization, and governance.
 
 ---
 
-## 🏗 Architecture Overview
+# 📌 1️⃣ Problem Statement
+
+Retail businesses generate large volumes of transactional sales data across multiple stores and regions. However:
+
+- Data exists in raw CSV formats.
+- No centralized data warehouse.
+- Limited real-time KPI visibility.
+- Manual reporting processes.
+- No structured security or governance.
+
+## 🎯 Objective
+
+Design and implement a scalable Retail Analytics Platform that:
+
+- Centralizes retail data into Snowflake  
+- Implements an enterprise Star Schema  
+- Supports Batch & Streaming processing  
+- Enables Advanced SQL analytics  
+- Ensures performance optimization  
+- Implements RBAC & Data Masking  
+- Delivers executive-level BI dashboards  
+
+---
+
+# 🏗 2️⃣ Architecture Overview
 
 The system follows a layered enterprise architecture:
 
-### 1️⃣ Data Sources
-- Historical Retail Sales (CSV)
-- Simulated Real-Time Streaming Data
-- External APIs / Operational Systems
+## 🔹 Data Sources
+- Raw Retail Sales CSV Files  
+- Simulated Streaming Input  
+- External Operational Data  
 
-### 2️⃣ Data Ingestion
-- Python ETL Pipelines
-- Apache Spark Batch Processing
-- Apache Spark Structured Streaming
+## 🔹 Data Ingestion
+- Python ETL Pipeline  
+- Apache Spark Batch Processing  
+- Apache Spark Structured Streaming  
 
-### 3️⃣ Data Processing
-- Data Validation
-- Schema Standardization
-- KPI Aggregations
-- Business Logic Transformations
-- Window Function Calculations
+## 🔹 Data Processing
+- Data Cleaning  
+- Column Standardization  
+- Business Logic Transformations  
+- KPI Aggregations  
+- Window Function Calculations  
 
-### 4️⃣ Data Warehouse (Snowflake)
-- Centralized Snowflake Storage
-- Star Schema Design:
-  - FACT_SALES
-  - DIM_CUSTOMER
-  - DIM_PRODUCT
-  - DIM_STORE
-  - DIM_DATE
+## 🔹 Data Warehouse (Snowflake)
 
-### 5️⃣ Performance & Governance
-- Clustering Keys (ORDER_DATE, STORE_ID)
-- Time Travel & Recovery
-- Role-Based Access Control (RBAC)
-- Dynamic Data Masking
-- Resource Monitoring
+Star Schema Design:
 
-### 6️⃣ Analytics & BI Layer
-- Executive KPI Dashboard
-- Total Revenue
-- YoY Growth
-- Average Order Value
-- Top-Selling Products
-- Customer Segmentation
-- Power BI / Snowflake Dashboards
+- FACT_SALES  
+- DIM_CUSTOMER  
+- DIM_PRODUCT  
+- DIM_STORE  
+- DIM_DATE  
+
+## 🔹 Performance & Governance
+- Clustering Keys  
+- Time Travel  
+- Role-Based Access Control (RBAC)  
+- Dynamic Data Masking  
+- Resource Monitoring  
+
+## 🔹 Analytics Layer
+- Power BI Executive Dashboard  
+- Snowflake Dashboards  
 
 ---
 
-## 📊 Data Warehouse Design
+# 📊 3️⃣ Data Warehouse Design
 
-The project uses a **Star Schema** for optimized analytical performance.
+This project uses a **Star Schema** optimized for analytical workloads.
 
-### Fact Table
-- FACT_SALES
-  - Sales_Amount
-  - Quantity
-  - Discount
-  - Profit
-  - Foreign Keys (Product_ID, Customer_ID, Store_ID, Date_ID)
+## ⭐ Fact Table
 
-### Dimension Tables
-- DIM_CUSTOMER
-- DIM_PRODUCT
-- DIM_STORE
-- DIM_DATE
+**FACT_SALES**
 
-Why Star Schema?
-- Faster query performance
-- Simplified joins
-- Optimized for BI tools
-- Industry standard for analytics
+- Sales_Amount  
+- Quantity  
+- Discount  
+- Profit  
+- Product_ID  
+- Customer_ID  
+- Store_ID  
+- Date_ID  
+
+## ⭐ Dimension Tables
+
+- DIM_CUSTOMER  
+- DIM_PRODUCT  
+- DIM_STORE  
+- DIM_DATE  
+
+### ✅ Why Star Schema?
+
+- Faster aggregations  
+- Simplified joins  
+- Optimized for BI tools  
+- Industry-standard analytics model  
 
 ---
 
-## 🔎 Advanced SQL Implementation
+# 🔎 4️⃣ Advanced SQL Implementation
 
-Implemented SQL Concepts:
+Implemented advanced analytical SQL concepts:
 
-- Common Table Expressions (CTE)
+- Common Table Expressions (CTE)  
 - Window Functions:
-  - ROW_NUMBER()
-  - LAG()
-  - LEAD()
-  - RANK()
-- Aggregations
-- Partitioning
-- Indexing
+  - ROW_NUMBER()  
+  - RANK()  
+  - LAG()  
+  - LEAD()  
+- Running Totals  
+- Year-over-Year Growth  
+- Partitioning  
+- Performance tuning  
 
-### Sample Analytics Use Cases:
-- Top-selling products per region
-- Year-over-Year revenue comparison
-- Customer retention analysis
-- Running revenue totals
+## 📌 Business Use Cases
 
----
-
-## 🔄 ETL / ELT Pipelines
-
-Developed Python-based ETL pipelines for:
-
-- Data Cleaning
-- Null Handling
-- Schema Validation
-- Deduplication
-- Incremental Data Loading
-
-Spark is used for:
-- Large-scale aggregations
-- Real-time streaming simulation
-- Distributed data processing
+- Top-selling products per year  
+- YoY revenue growth  
+- Monthly revenue trends  
+- Customer revenue ranking  
+- Sales decile segmentation  
 
 ---
 
-## ❄ Snowflake Optimization
+# 🔄 5️⃣ ETL Pipeline
 
-- Clustering Keys
-- Query Result Caching
-- Warehouse Auto-Suspend
-- Resource Monitors
-- Time Travel for data recovery
-- Semi-structured data handling (VARIANT)
+Developed a structured Python-based ETL pipeline:
 
----
+## Extraction
+- Read raw CSV files  
+- Schema validation  
+- Null value detection  
 
-## 🔐 Security & Governance
+## Transformation
+- Column standardization  
+- Date conversion  
+- Numeric validation  
+- Deduplication  
+- KPI preparation  
 
-- Role-Based Access Control (RBAC)
-- Data Masking Policies
-- Least Privilege Access Model
-- Audit Monitoring
-
----
-
-## 📈 Dashboard & Business Insights
-
-Interactive dashboard includes:
-
-- Total Revenue KPI
-- Revenue Growth %
-- Average Order Value
-- Category-wise Sales
-- Monthly Revenue Trend
-- Top 5 Products
-- Customer Segmentation
-
-Tools Used:
-- Power BI
-- Snowflake Dashboard
+## Loading
+- Incremental data loading into Snowflake  
+- Batch ingestion support  
 
 ---
 
-## 🛠 Technology Stack
+# ⚡ 6️⃣ Apache Spark (Batch + Streaming)
 
-- Python
-- SQL
-- Apache Spark
-- Snowflake
-- Power BI
-- Git & GitHub
+## Batch Processing
+- Large-scale aggregations  
+- Historical KPI computation  
+- Monthly & yearly revenue calculations  
 
----
+## Structured Streaming
+- Simulated real-time ingestion  
+- Incremental data updates  
+- Near real-time analytics support  
 
-## 🚀 How to Run the Project
-
-1. Clone the repository
-2. Install required dependencies
-3. Run ETL pipeline
-4. Execute Spark jobs
-5. Load data into Snowflake
-6. Connect BI tool to Snowflake
+Spark enables distributed processing, scalability, and fault tolerance.
 
 ---
 
-## 📌 Key Highlights
+# ❄ 7️⃣ Snowflake Optimization
+
+Implemented Snowflake performance features:
+
+- Clustering on ORDER_DATE & STORE_ID  
+- Warehouse Auto-Suspend  
+- Query Result Caching  
+- Resource Monitoring  
+- Time Travel Recovery  
+- Semi-Structured Data Handling (VARIANT)  
+
+---
+
+# 🔐 8️⃣ Security & Governance
+
+Enterprise-level controls implemented:
+
+- Role-Based Access Control (RBAC)  
+- Least Privilege Access Model  
+- Dynamic Data Masking Policies  
+- Secure warehouse usage  
+- Audit monitoring  
+
+---
+
+# 📈 9️⃣ Executive Dashboard
+
+Interactive BI dashboard includes:
+
+- Total Revenue  
+- Revenue Growth %  
+- Average Order Value  
+- Total Orders  
+- Category-wise Revenue  
+- Monthly Sales Trends  
+- Top 5 Products  
+- Customer Segmentation  
+
+### Tools Used:
+- Power BI  
+- Snowflake Dashboard  
+
+---
+
+# 🗂 1️⃣0️⃣ Project Structure
+
+```
+Retail-Chain-Sales-Analytics-Platform/
+│
+├── Apache_Spark_batch + streaming/
+├── Cleaned data/
+├── Data Visualization (POWER BI)/
+├── ETL Pipeline/
+├── Raw data/
+├── Star Schema SQL/
+├── Warehouse/
+│
+├── Advanced_sql_analytics.sql
+├── Project Presentation.pdf
+├── README.md
+├── Security_RBAC_Data Masking_ Governance.sql
+├── snowflake_optimization.sql
+```
+
+This modular structure ensures:
+
+- Clean separation of concerns  
+- Maintainable codebase  
+- Enterprise-ready organization  
+- Easy project validation  
+
+---
+
+# 🛠 1️⃣1️⃣ Technology Stack
+
+- Python  
+- SQL  
+- Apache Spark  
+- Snowflake  
+- Power BI  
+- Git & GitHub  
+
+---
+
+# 🚀 1️⃣2️⃣ Execution Workflow
+
+1. Setup Snowflake Warehouse  
+2. Execute Star Schema SQL  
+3. Run ETL Pipeline  
+4. Execute Spark Batch & Streaming  
+5. Load processed data into Snowflake  
+6. Run Advanced SQL queries  
+7. Connect Power BI to Snowflake  
+8. Build Executive Dashboard  
+
+---
+
+# 🌟 1️⃣3️⃣ Key Highlights
 
 ✔ End-to-End Data Engineering Pipeline  
-✔ Enterprise-Level Data Warehouse  
+✔ Enterprise Star Schema Design  
 ✔ Advanced SQL Analytics  
-✔ Real-Time Processing Simulation  
-✔ Secure & Governed Architecture  
-✔ Performance Optimized  
-✔ Executive Dashboard  
+✔ Distributed Processing with Spark  
+✔ Snowflake Optimization & Governance  
+✔ Secure RBAC Implementation  
+✔ Executive-Level Dashboard  
+✔ Scalable & Production-Ready Architecture  
 
 ---
 
-## 📄 License
+# 👥 Team Members
 
-This project is developed for academic and portfolio demonstration purposes.
+- Shubhranshu Acharya  
+- Aditya Prakash Acharya  
+- Jyotirmaye Acharya  
 
 ---
 
-## ⭐ If You Like This Project
+# 📄 License
 
-Give it a star ⭐ on GitHub and feel free to connect!
+Developed for academic and professional portfolio demonstration purposes.
